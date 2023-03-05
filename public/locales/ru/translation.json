@@ -11,5 +11,7 @@
     " Asperiores culpa deserunt fuga labore laudantium nihil, quas totam voluptatibus": {
       "Aut, nulla!": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores culpa deserunt fuga labore laudantium nihil, quas totam voluptatibus.Aut, nulla!"
     }
-  }
+  },
+  "decrement": "decrement",
+  "increment": "increment"
 }
