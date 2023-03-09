@@ -3,7 +3,6 @@ import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProviders';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -12,6 +11,7 @@ interface ModalProps {
     isOpen?: boolean;
     onClose?: () => void;
 }
+
 const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
@@ -24,9 +24,8 @@ export const Modal = (props: ModalProps) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
-    const { theme } = useTheme();
 
-    const onContentClick = (e:React.MouseEvent) => {
+    const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
     };
 
@@ -40,7 +39,7 @@ export const Modal = (props: ModalProps) => {
         }
     }, [onClose]);
 
-    const onKeyDown = useCallback((e:KeyboardEvent) => {
+    const onKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             closeHandler();
         }
@@ -57,10 +56,9 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods:Record<string, boolean> = {
+    const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
-        [cls[theme]]: true,
     };
 
     return (
