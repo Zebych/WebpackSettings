@@ -3,15 +3,13 @@ import { memo } from 'react';
 import cls from './Text.module.scss';
 
 export enum TextTheme{
-    // eslint-disable-next-line no-unused-vars
     PRIMARY='primary',
-    // eslint-disable-next-line no-unused-vars
     ERROR='error',
 }
 
 interface TextProps {
     className?: string;
-    title?:string;
+    title?:string | null;
     text?:string;
     theme?:TextTheme;
 }

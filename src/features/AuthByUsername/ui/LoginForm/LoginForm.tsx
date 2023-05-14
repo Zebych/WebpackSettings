@@ -61,7 +61,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 <Text title={t('Форма авторизации')} />
                 {error && (
                     <Text
-                        text={t('Вы ввели неверный логин или пароль')}
+                        text={t('Вы ввели неверный логин или пароль') || ''}
                         theme={TextTheme.ERROR}
                     />
                 )}
@@ -69,14 +69,14 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     autofocus
                     type="text"
                     className={cls.input}
-                    placeholder={t('Введите username')}
+                    placeholder={t('Введите username') || ''}
                     onChange={onChangeUsername}
                     value={username}
                 />
                 <Input
                     type="text"
                     className={cls.input}
-                    placeholder={t('Введите пароль')}
+                    placeholder={t('Введите пароль') || ''}
                     onChange={onChangePassword}
                     value={password}
                 />
